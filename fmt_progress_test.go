@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/DATA-DOG/godog/colors"
-	"github.com/DATA-DOG/godog/gherkin"
+	"github.com/instantlabs/godog/colors"
+	"github.com/instantlabs/godog/gherkin"
 )
 
 func TestProgressFormatterOutput(t *testing.T) {

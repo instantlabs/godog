@@ -14,7 +14,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/DATA-DOG/godog/gherkin"
+	"github.com/instantlabs/godog/gherkin"
 )
 
 var errorInterface = reflect.TypeOf((*error)(nil)).Elem()

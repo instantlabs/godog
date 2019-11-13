@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"reflect"
 
-	"github.com/DATA-DOG/godog"
-	"github.com/DATA-DOG/godog/gherkin"
+	"github.com/instantlabs/godog"
+	"github.com/instantlabs/godog/gherkin"
 )
 
 type apiFeature struct {

@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/DATA-DOG/godog/gherkin"
+	"github.com/instantlabs/godog/gherkin"
 )
 
 func init() {

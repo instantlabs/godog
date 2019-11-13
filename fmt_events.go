@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/DATA-DOG/godog/gherkin"
+	"github.com/instantlabs/godog/gherkin"
 )
 
 const nanoSec = 1000000

@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/DATA-DOG/godog/colors"
+	"github.com/instantlabs/godog/colors"
 )
 
 const (

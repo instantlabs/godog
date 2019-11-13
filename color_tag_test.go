@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/DATA-DOG/godog/colors"
+	"github.com/instantlabs/godog/colors"
 )
 
 type csiState int

@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/DATA-DOG/godog/gherkin"
+	"github.com/instantlabs/godog/gherkin"
 )
 
 // SuiteContext provides steps for godog suite execution and

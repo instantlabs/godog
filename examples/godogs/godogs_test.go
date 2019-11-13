@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/DATA-DOG/godog"
-	"github.com/DATA-DOG/godog/colors"
+	"github.com/instantlabs/godog"
+	"github.com/instantlabs/godog/colors"
 )
 
 var opt = godog.Options{Output: colors.Colored(os.Stdout)}
