@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 	"reflect"
 	"regexp"
@@ -29,7 +30,21 @@ var snippetHelperFuncs = template.FuncMap{
 	},
 }
 
-var undefinedSnippetsTpl = template.Must(template.New("snippets").Funcs(snippetHelperFuncs).Parse(`
+// EnvFileElseString returns the contents of the file named in EnvVarName,
+// else the default template string.  Panics if file name not found.
+func EnvFileElseString(EnvVarName, defaultTemplate string) string {
+	fileName := os.Getenv(EnvVarName)
+	if fileName != "" {
+		bytes, err := ioutil.ReadFile(fileName)
+		if err != nil {
+			panic(err)
+		}
+		return string(bytes)
+	}
+	return defaultTemplate
+}
+
+var undefinedSnippetsTpl = template.Must(template.New("snippets").Funcs(snippetHelperFuncs).Parse(EnvFileElseString("GODOG_SNIPPET_TEMPLATE", `
 {{ range . }}func {{ .Method }}({{ .Args }}) error {
 	return godog.ErrPending
 }
@@ -37,7 +52,7 @@ var undefinedSnippetsTpl = template.Must(template.New("snippets").Funcs(snippetH
 {{end}}func FeatureContext(s *godog.Suite) { {{ range . }}
 	s.Step({{ backticked .Expr }}, {{ .Method }}){{end}}
 }
-`))
+`)))
 
 type undefinedSnippet struct {
 	Method   string
