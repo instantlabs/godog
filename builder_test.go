@@ -275,7 +275,7 @@ func TestGodogBuildWithinGopath(t *testing.T) {
 	}
 	defer os.RemoveAll(gopath)
 
-	pkg := filepath.Join(gopath, "src", "github.com", "DATA-DOG")
+	pkg := filepath.Join(gopath, "src", "github.com", "instantlabs")
 	if err := os.MkdirAll(pkg, 0755); err != nil {
 		t.Fatal(err)
 	}
@@ -325,7 +325,7 @@ func TestGodogBuildWithVendoredGodogAndMod(t *testing.T) {
 	}
 	defer os.RemoveAll(gopath)
 
-	pkg := filepath.Join(dir, "vendor", "github.com", "DATA-DOG")
+	pkg := filepath.Join(dir, "vendor", "github.com", "instantlabs")
 	if err := os.MkdirAll(pkg, 0755); err != nil {
 		t.Fatal(err)
 	}
@@ -371,7 +371,7 @@ func TestGodogBuildWithVendoredGodogWithoutModule(t *testing.T) {
 	}
 	defer os.RemoveAll(gopath)
 
-	pkg := filepath.Join(dir, "vendor", "github.com", "DATA-DOG")
+	pkg := filepath.Join(dir, "vendor", "github.com", "instantlabs")
 	if err := os.MkdirAll(pkg, 0755); err != nil {
 		t.Fatal(err)
 	}
